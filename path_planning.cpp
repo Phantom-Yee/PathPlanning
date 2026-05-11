@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "path_planning.h"
 
 #define main pathplanning_dummy_main
@@ -53,11 +54,11 @@ static Point xyToLatlon(const Point& p, const Point& origin) {
     return Point(lon, lat);
 }
 
-extern "C" int generate_path_from_file(const char* input_path,
-                                        const char* output_path,
-                                        double robot_width,
-                                        double optimize_dist,
-                                        double step_size)
+extern "C" PATHPLANNING_API int generate_path_from_file(const char* input_path,
+                                                        const char* output_path,
+                                                        double robot_width,
+                                                        double optimize_dist,
+                                                        double step_size)
 {
     if (!input_path || !output_path) return -1;
     if (robot_width <= 0.0 || optimize_dist <= 0.0 || step_size <= 0.0) return -2;
