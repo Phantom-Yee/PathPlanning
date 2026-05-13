@@ -1241,7 +1241,7 @@ void testTriangle() {
 
     std::ofstream outFile("example.txt", std::ios::trunc); // 覆盖写入，避免旧轨迹干扰可视化
     if (outFile.is_open()) {
-        for (int i = 0; i < path1.size(); i++) {
+        for (size_t i = 0; i < path1.size(); ++i) {
             outFile << path1[i].x << "            " << path1[i].y << std::endl; 
         }
         outFile.close(); // 关闭文件
@@ -1252,7 +1252,7 @@ void testTriangle() {
 
     std::ofstream outFile2("dist_example2.txt", std::ios::trunc); // 覆盖写入，避免旧轨迹干扰可视化
     if (outFile2.is_open()) {
-        for (int i = 0; i < discretizedPath1.size(); i++) {
+        for (size_t i = 0; i < discretizedPath1.size(); ++i) {
             outFile2 << discretizedPath1[i].x << "            " << discretizedPath1[i].y << std::endl; 
         }
         outFile2.close(); // 关闭文件
